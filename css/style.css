@@ -1,0 +1,90 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+
+@font-face { 
+    font-family: "HankenGrotest";
+    src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.woff2") format("woff2");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 500 800;
+}
+
+:root { 
+
+   /* =========== colors ========= */
+
+    /* primary */
+    --Light-red: hsl(0, 100%, 67%); 
+    --Orangey-yellow: hsl(39, 100%, 56%); 
+    --Green-teal: hsl(166, 100%, 37%); 
+    --Cobalt-blue: hsl(234, 85%, 45%); 
+
+    /* Gradients */
+
+    --Light-slate-blue-bg: hsl(252, 100%, 67%); 
+    --Light-royal-blue-bg: hsl(241, 81%, 54%); 
+    --Violet-blue-cr: hsla(256, 72%, 46%, 1); 
+    --Persian-blue-cr: hsla(241, 72%, 46%, 0); 
+
+    /* Neutral */
+
+    --White: hsl(0, 0%, 100%); 
+    --Pale-blue: hsl(221, 100%, 96%); 
+    --Light-lavender: hsl(241, 100%, 89%); 
+    --Dark-gray-blue: hsl(224, 30%, 27%); 
+
+
+
+}
+
+body { 
+    font-family: "HankenGrotest";
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Pale-blue);
+}
