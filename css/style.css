@@ -43,7 +43,6 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-
 @font-face { 
     font-family: "HankenGrotest";
     src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.woff2") format("woff2");
@@ -60,24 +59,47 @@ h1, h2, h3, h4, h5, h6 {
     --Light-red: hsl(0, 100%, 67%); 
     --Orangey-yellow: hsl(39, 100%, 56%); 
     --Green-teal: hsl(166, 100%, 37%); 
-    --Cobalt-blue: hsl(234, 85%, 45%); 
-
+    --Cobalt-blue: hsl(234, 85%, 45%);
     /* Gradients */
-
     --Light-slate-blue-bg: hsl(252, 100%, 67%); 
     --Light-royal-blue-bg: hsl(241, 81%, 54%); 
     --Violet-blue-cr: hsla(256, 72%, 46%, 1); 
     --Persian-blue-cr: hsla(241, 72%, 46%, 0); 
 
     /* Neutral */
-
     --White: hsl(0, 0%, 100%); 
     --Pale-blue: hsl(221, 100%, 96%); 
     --Light-lavender: hsl(241, 100%, 89%); 
     --Dark-gray-blue: hsl(224, 30%, 27%); 
 
+    /* ========== Font Size =========== */
+    --font-size-xs: 0.75rem; /* 12px */ 
+    --font-size-m: 1rem; /* 16px */
+    --font-size-l: 1.125rem; /* 18px  */ 
 
+    /* =========== Spacing ========== */
+    --spacing-xs: 0.5rem;   /* 8px  */
+    --spacing-s: 0.75rem;  /*  12px */
+    --spacing-m: 1rem;     /* 16px  */
+    --spacing-l: 1.125rem;  /*  18px */
+    --spacing-xl: 1.5rem;  /*  24px  */
+} 
 
+/* Utilities */
+
+.light-red { 
+  color: var(--Light-red);
+  /* justify-self: flex-start; */
+}
+
+.orangey-yellow { 
+  color: var(--Orangey-yellow);
+}
+.green-teal { 
+  color: var(--Green-teal);
+}
+.cobalt-blue { 
+  color: var(--Cobalt-blue);
 }
 
 body { 
@@ -85,6 +107,159 @@ body {
     min-height: 100dvh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: var(--Pale-blue);
+    background-color: var(--White);
 }
+
+.card-container { 
+  display: flex;
+  flex-direction: column;
+}
+
+.card__result { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--White);
+  background-image: linear-gradient( var(--Light-slate-blue-bg) 2%, var(--Light-royal-blue-bg) 98%);
+  padding: 3rem; 
+  text-align: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.card__result--header { 
+  font-size: clamp(1rem , 1.3rem + 1.5vw, 1.5rem);
+  margin-bottom: var(--spacing-m);
+  font-weight: 500;
+  color: hsla(221, 100%, 96%, 0.8);
+}
+
+.card__result--circle { 
+  background-image: linear-gradient( var(--Violet-blue-cr) 3%, var(--Persian-blue-cr) 96%); 
+  width: clamp(130px, 150px + 1vw, 150px);
+  height:  clamp(130px, 150px + 1vw, 150px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: var(--spacing-m);
+}
+
+.card__result--highlight { 
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.card__result--text { 
+  color: hsla(221, 100%, 96%, 0.6);
+  font-size: var(--font-size-m);
+}
+
+.card__result--subheading { 
+  font-size:  clamp(1rem , 1.3rem + 1.4vw, 1.6rem);
+  font-weight: 700; 
+}
+
+.card__result--des { 
+  color: hsla(221, 100%, 96%, 0.7);
+}
+
+.card__summary { 
+  background-color: var(--White);
+  padding: 1.4rem;
+}
+
+.card__summary--header { 
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-l);
+}
+
+.card__summary--list { 
+  font-weight: 700;
+  padding: 0;
+}
+
+.card__summary--list li { 
+  margin-bottom: 0.75em;
+  display: flex;
+  justify-content: space-between;
+  padding: .90rem;
+  border-radius: 10px;
+}
+
+.grey-text { 
+  color: hsla(0, 0%, 0%, 0.4);
+}
+
+.card__summary--reaction { 
+  background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.card__summary--memory { 
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.card__summary--verbal { 
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.card__summary--visual { 
+  background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.card__summary-text { 
+  flex: 1;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.card__summary--button { 
+  background-color: var(--Dark-gray-blue);
+  color: var(--White);
+  padding: .8em;
+  border-radius: 999px;
+  border: none;
+  width: 100%;
+}
+
+.card__summary--button:hover { 
+  background-image: linear-gradient(hsl(241, 81%, 54%) 30%, hsl(252, 100%, 67%) );
+  cursor: pointer;
+}
+
+/* ========== Desktop ========== */
+
+@media (min-width: 600px) { 
+  body { 
+    background-color: var(--Pale-blue);
+    align-items: center;
+  }
+
+  .card-container { 
+    max-width: 650px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .card__result { 
+    border-radius: 30px;
+    align-self: stretch;
+    flex-basis: 50%;
+    transform: translateX(15px);
+  }
+
+  .card__summary { 
+    align-self: stretch;
+    padding: 2rem;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    flex-grow: 1;
+    display: flex; 
+    flex-direction: column;
+
+  }
+
+  .card__summary--list { 
+    flex: 1;
+  }
+} 
