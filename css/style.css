@@ -211,6 +211,7 @@ body {
   flex: 1;
   display: flex;
   justify-content: space-between; 
+  margin-left: .5em;
 }
 
 .card__summary--button { 
