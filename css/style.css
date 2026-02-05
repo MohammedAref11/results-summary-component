@@ -177,6 +177,7 @@ body {
 .card__summary--list { 
   font-weight: 700;
   padding: 0;
+  margin-bottom: 1em;
 }
 
 .card__summary--list li { 
